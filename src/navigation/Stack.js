@@ -6,6 +6,8 @@ import {
 } from 'react-navigation';
 import { colors, device } from '../constants';
 
+// components
+import CustomDrawerContent from '../components/CustomDrawerContent';
 import HeaderLeft from '../components/HeaderLeft';
 
 // grab screens
@@ -29,6 +31,7 @@ const DrawerNavigator = createDrawerNavigator(
     ChatStack
   },
   {
+    contentComponent: CustomDrawerContent,
     drawerType: 'slide',
     drawerWidth: device.width - 32,
     initialRouteName: 'ChatStack',
