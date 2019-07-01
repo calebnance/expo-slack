@@ -1,23 +1,31 @@
 {
   "expo": {
-    "name": "expo-slack",
+    "name": "Expo Slack",
+    "description": "slack clone with expo",
+    "scheme": "slackclone",
     "slug": "slackclone",
     "privacy": "public",
     "sdkVersion": "33.0.0",
-    "platforms": ["ios", "android", "web"],
-    "version": "1.0.0",
+    "version": "0.0.1",
+    "platforms": ["android", "ios", "web"],
+    "githubUrl": "https://github.com/calebnance/expo-slack",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "primaryColor": "#ffffff",
+    "icon": "src/assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+      "image": "src/assets/splash.png",
+      "resizeMode": "contain"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
+    "android": {
+      "versionCode": 1
+    },
     "ios": {
+      "buildNumber": "0.0.1",
       "supportsTablet": true
     }
   }

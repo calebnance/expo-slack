@@ -1,6 +1,18 @@
 {
+  "name": "expo-slack",
+  "version": "0.0.1",
+  "description": "slack clone with expo",
+  "author": "Caleb Nance",
+  "license": "MIT",
+  "keywords": [
+    "expo",
+    "react native",
+    "react navigation",
+    "slack"
+  ],
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "dev": "expo start",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -12,10 +24,29 @@
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
-    "react-native-web": "^0.11.4"
+    "react-native-web": "^0.11.4",
+    "react-navigation": "^3.11.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.1.1"
+    "babel-preset-expo": "^5.1.1",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-import-helpers": "^1.0.1",
+    "eslint-plugin-jsx-a11y": "^6.2.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "prettier": "^1.18.2"
   },
-  "private": true
+  "private": true,
+  "prettier": {
+    "singleQuote": true
+  },
+  "eslintIgnore": [
+    "babel.config.js"
+  ],
+  "engines": {
+    "node": ">=10.3.0"
+  }
 }
