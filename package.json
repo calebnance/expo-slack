@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "babel-preset-expo": "^5.1.1",
-    "eslint": "^6.0.1",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.0",
