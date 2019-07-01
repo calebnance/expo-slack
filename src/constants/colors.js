@@ -5,6 +5,7 @@ export default {
   black50: 'rgba(0, 0, 0, 0.5)',
   black70: 'rgba(0, 0, 0, 0.7)',
   white: '#fff',
+  white10: 'rgba(255, 255, 255, 0.1)',
 
   // slack colors
   blue: '#36c5f0',
