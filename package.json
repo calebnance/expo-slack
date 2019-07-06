@@ -25,6 +25,7 @@
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+    "react-native-gifted-chat": "^0.9.11",
     "react-native-svg": "^9.5.1",
     "react-native-swiper": "^1.5.14",
     "react-native-web": "^0.11.4",
