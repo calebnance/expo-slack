@@ -10,6 +10,7 @@ class ChatScreen extends React.Component {
     super(props);
 
     this.state = {
+      firstMessage: true,
       messages: []
     };
 
@@ -35,8 +36,22 @@ class ChatScreen extends React.Component {
   }
 
   onSend(messages = []) {
+    const { firstMessage } = this.state;
+
+    // add user image
+    const formattedMessage = messages;
+
+    // if first message, add avatar image
+    if (firstMessage) {
+      formattedMessage[0].user.avatar = images.user1;
+      formattedMessage[0].user._id = 3;
+      this.setState({
+        firstMessage: false
+      });
+    }
+
     this.setState(previousState => ({
-      messages: GiftedChat.append(previousState.messages, messages)
+      messages: GiftedChat.append(previousState.messages, formattedMessage)
     }));
   }
 
