@@ -1,7 +1,9 @@
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
 import { AppLoading } from 'expo';
 import { func } from './src/constants';
+
+// main navigation stack
+import Stack from './src/navigation/Stack';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -24,19 +26,6 @@ export default class App extends React.Component {
       );
     }
 
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
+    return <Stack />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});

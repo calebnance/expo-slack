@@ -14,6 +14,7 @@
   "scripts": {
     "dev": "expo start",
     "start": "expo start",
+    "lint": "eslint ./src",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -21,15 +22,21 @@
   },
   "dependencies": {
     "expo": "^33.0.0",
+    "expo-asset": "^6.0.0",
+    "expo-font": "^6.0.1",
+    "prop-types": "^15.7.2",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+    "react-native-gifted-chat": "^0.9.11",
+    "react-native-svg": "^9.5.3",
+    "react-native-swiper": "^1.5.14",
     "react-native-web": "^0.11.4",
     "react-navigation": "^3.11.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.1.1",
-    "eslint": "^6.0.1",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.0",
