@@ -21,7 +21,6 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "babel-eslint": "^10.0.2",
     "expo": "^34.0.3",
     "expo-asset": "^6.0.0",
     "expo-font": "^6.0.1",
@@ -38,6 +37,7 @@
     "react-navigation": "^3.11.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.2",
     "babel-preset-expo": "^5.1.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
