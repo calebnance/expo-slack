@@ -17,7 +17,7 @@ Run Project Locally: `expo start`
 
 ## Stats
 
-- Expo SDK 33
+- Expo SDK 34
 - React Navigation v3
 - PropTypes
 - [Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat)
