@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, ViewPropTypes, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+import { View, ViewPropTypes, StyleSheet } from 'react-native';
 import { Avatar, Day, utils } from 'react-native-gifted-chat';
+
+// components
 import CustomMessageBubble from './CustomMessageBubble';
 
 const { isSameUser, isSameDay } = utils;

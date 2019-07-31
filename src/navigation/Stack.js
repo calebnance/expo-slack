@@ -6,12 +6,12 @@ import {
 } from 'react-navigation';
 import { colors, device } from '../constants';
 
+// screens
+import ChatScreen from '../screens/ChatScreen';
+
 // components
 import CustomDrawerContent from '../components/CustomDrawerContent';
 import HeaderLeft from '../components/HeaderLeft';
-
-// grab screens
-import ChatScreen from '../screens/ChatScreen';
 
 // create stack navigator
 const ChatStack = createStackNavigator(

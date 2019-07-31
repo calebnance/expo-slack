@@ -1,6 +1,8 @@
 import React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
+import { images } from '../constants';
 
+// components
 import CustomMessage from '../components/CustomMessage';
 
 class ChatScreen extends React.Component {
@@ -19,12 +21,13 @@ class ChatScreen extends React.Component {
       messages: [
         {
           _id: 1,
-          text: 'Hello developer',
+          text: 'Hello developer!',
           createdAt: new Date(),
+
           user: {
             _id: 2,
-            name: 'React Native',
-            avatar: 'https://placeimg.com/140/140/any'
+            name: 'Caleb Nance',
+            avatar: images.profile
           }
         }
       ]

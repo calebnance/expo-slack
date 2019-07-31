@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Text,
   Clipboard,
@@ -8,7 +9,6 @@ import {
   ViewPropTypes,
   Platform
 } from 'react-native';
-import PropTypes from 'prop-types';
 import {
   MessageText,
   MessageImage,
