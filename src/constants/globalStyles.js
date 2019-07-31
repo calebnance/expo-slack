@@ -1,4 +1,5 @@
 import colors from './colors';
+import fonts from './fonts';
 
 export default {
   activeOpacity: 0.7,
@@ -33,11 +34,21 @@ export default {
     elevation: 0
   },
 
+  containerNavBlocks: {
+    height: 44,
+    justifyContent: 'center',
+    overflow: 'hidden'
+  },
+
   flex1: { flex: 1 },
   flex2: { flex: 2 },
   flex3: { flex: 3 },
   flex4: { flex: 4 },
   flex5: { flex: 5 },
+
+  textLarsBold14: { fontFamily: fonts.larsseitBold, fontSize: 14 },
+  textLarsBold16: { fontFamily: fonts.larsseitBold, fontSize: 16 },
+  textLarsBold18: { fontFamily: fonts.larsseitBold, fontSize: 18 },
 
   spacer24: { height: 24 },
   spacer48: { height: 48 },

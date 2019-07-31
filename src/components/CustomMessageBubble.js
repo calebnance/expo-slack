@@ -21,6 +21,7 @@ const { isSameUser, isSameDay } = utils;
 class Bubble extends React.Component {
   constructor(props) {
     super(props);
+
     this.onLongPress = this.onLongPress.bind(this);
   }
 
