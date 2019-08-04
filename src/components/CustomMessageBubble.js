@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Text,
   Clipboard,
   StyleSheet,
+  Text,
   TouchableOpacity,
-  View,
-  ViewPropTypes,
-  Platform
+  View
 } from 'react-native';
 import {
   MessageText,
@@ -15,10 +13,14 @@ import {
   Time,
   utils
 } from 'react-native-gifted-chat';
+import { colors, device, gStyle } from '../constants';
 
 const { isSameUser, isSameDay } = utils;
 
-class Bubble extends React.Component {
+// modified but based off this example
+// https://github.com/FaridSafi/react-native-gifted-chat/tree/master/example-slack-message
+
+class CustomMessageBubble extends React.Component {
   constructor(props) {
     super(props);
 
@@ -33,8 +35,9 @@ class Bubble extends React.Component {
     } else if (currentMessage.text) {
       const options = ['Copy Text', 'Cancel'];
       const cancelButtonIndex = options.length - 1;
+      const { actionSheet } = this.context;
 
-      this.context.actionSheet().showActionSheetWithOptions(
+      actionSheet().showActionSheetWithOptions(
         {
           options,
           cancelButtonIndex
@@ -55,12 +58,7 @@ class Bubble extends React.Component {
     const { currentMessage, renderMessageText } = this.props;
 
     if (currentMessage.text) {
-      const {
-        containerStyle,
-        wrapperStyle,
-        messageTextStyle,
-        ...messageTextProps
-      } = this.props;
+      const { ...messageTextProps } = this.props;
 
       if (renderMessageText) {
         return renderMessageText(messageTextProps);
@@ -83,7 +81,7 @@ class Bubble extends React.Component {
     const { currentMessage, renderMessageImage } = this.props;
 
     if (currentMessage.image) {
-      const { containerStyle, wrapperStyle, ...messageImageProps } = this.props;
+      const { ...messageImageProps } = this.props;
 
       if (renderMessageImage) {
         return renderMessageImage(messageImageProps);
@@ -98,57 +96,19 @@ class Bubble extends React.Component {
     return null;
   }
 
-  renderTicks() {
-    const { currentMessage, renderTicks, tickStyle } = this.props;
-
-    if (renderTicks) {
-      return renderTicks(currentMessage);
-    }
-
-    if (currentMessage.user._id !== this.props.user._id) {
-      return null;
-    }
-
-    if (currentMessage.sent || currentMessage.received) {
-      return (
-        <View style={[styles.headerItem, styles.tickView]}>
-          {currentMessage.sent && (
-            <Text style={[styles.standardFont, styles.tick, tickStyle]}>✓</Text>
-          )}
-          {currentMessage.received && (
-            <Text style={[styles.standardFont, styles.tick, tickStyle]}>✓</Text>
-          )}
-        </View>
-      );
-    }
-
-    return null;
-  }
-
   renderUsername() {
-    const { currentMessage, renderUsername, usernameStyle } = this.props;
+    const { currentMessage, renderUsername } = this.props;
 
     const username = currentMessage.user.name;
 
     if (username) {
-      const { containerStyle, wrapperStyle, ...usernameProps } = this.props;
+      const { ...usernameProps } = this.props;
 
       if (renderUsername) {
         return renderUsername(usernameProps);
       }
 
-      return (
-        <Text
-          style={[
-            styles.standardFont,
-            styles.headerItem,
-            styles.username,
-            usernameStyle
-          ]}
-        >
-          {username}
-        </Text>
-      );
+      return <Text style={styles.usernameText}>{username}</Text>;
     }
 
     return null;
@@ -158,7 +118,7 @@ class Bubble extends React.Component {
     const { currentMessage, renderTime } = this.props;
 
     if (currentMessage.createdAt) {
-      const { containerStyle, wrapperStyle, ...timeProps } = this.props;
+      const { ...timeProps } = this.props;
 
       if (renderTime) {
         return renderTime(timeProps);
@@ -167,15 +127,8 @@ class Bubble extends React.Component {
       return (
         <Time
           {...timeProps}
-          containerStyle={{ left: [styles.timeContainer] }}
-          textStyle={{
-            left: [
-              styles.standardFont,
-              styles.headerItem,
-              styles.time,
-              timeProps.textStyle
-            ]
-          }}
+          containerStyle={{ left: [styles.containerTime] }}
+          textStyle={{ left: [styles.timeText, timeProps.textStyle] }}
         />
       );
     }
@@ -183,51 +136,29 @@ class Bubble extends React.Component {
     return null;
   }
 
-  renderCustomView() {
-    const { renderCustomView } = this.props;
-
-    if (renderCustomView) {
-      return renderCustomView(this.props);
-    }
-
-    return null;
-  }
-
   render() {
-    const {
-      containerStyle,
-      currentMessage,
-      previousMessage,
-      touchableProps,
-      wrapperStyle
-    } = this.props;
+    const { currentMessage, previousMessage, touchableProps } = this.props;
 
     const isSameThread =
       isSameUser(currentMessage, previousMessage) &&
       isSameDay(currentMessage, previousMessage);
 
-    const messageHeader = isSameThread ? null : (
-      <View style={styles.headerView}>
-        {this.renderUsername()}
-        {this.renderTime()}
-        {this.renderTicks()}
-      </View>
-    );
-
     return (
-      <View style={[styles.container, containerStyle]}>
+      <View style={styles.container}>
         <TouchableOpacity
-          onLongPress={this.onLongPress}
           accessibilityTraits="text"
+          onLongPress={this.onLongPress}
           {...touchableProps}
         >
-          <View style={[styles.wrapper, wrapperStyle]}>
-            <View>
-              {this.renderCustomView()}
-              {messageHeader}
-              {this.renderMessageImage()}
-              {this.renderMessageText()}
-            </View>
+          <View style={styles.containerContent}>
+            {isSameThread ? null : (
+              <View style={styles.containerMsgHeader}>
+                {this.renderUsername()}
+                {this.renderTime()}
+              </View>
+            )}
+            {this.renderMessageImage()}
+            {this.renderMessageText()}
           </View>
         </TouchableOpacity>
       </View>
@@ -235,118 +166,77 @@ class Bubble extends React.Component {
   }
 }
 
-// note: everything is forced to be "left" positioned with this component.
-// the "right" position is only used in the default bubble.
-const styles = StyleSheet.create({
-  standardFont: {
-    fontSize: 15
-  },
-  slackMessageText: {
-    marginLeft: 0,
-    marginRight: 0
-  },
-  container: {
-    flex: 1,
-    alignItems: 'flex-start'
-  },
-  wrapper: {
-    marginRight: 60,
-    minHeight: 20,
-    justifyContent: 'flex-end'
-  },
-  username: {
-    fontWeight: 'bold'
-  },
-  time: {
-    textAlign: 'left',
-    fontSize: 12
-  },
-  timeContainer: {
-    marginLeft: 0,
-    marginRight: 0,
-    marginBottom: 0
-  },
-  headerItem: {
-    marginRight: 10
-  },
-  headerView: {
-    // try to align it better with the avatar on android.
-    marginTop: Platform.OS === 'android' ? -2 : 0,
-    flexDirection: 'row',
-    alignItems: 'baseline'
-  },
-  tick: {
-    backgroundColor: 'transparent',
-    color: 'white'
-  },
-  tickView: {
-    flexDirection: 'row'
-  },
-  slackImage: {
-    borderRadius: 3,
-    marginLeft: 0,
-    marginRight: 0
-  }
-});
-
-Bubble.contextTypes = {
+CustomMessageBubble.contextTypes = {
   actionSheet: PropTypes.func
 };
 
-Bubble.defaultProps = {
+CustomMessageBubble.defaultProps = {
   currentMessage: {
     createdAt: null,
     image: null,
     text: null
   },
-  containerStyle: {},
-  containerToNextStyle: {},
-  containerToPreviousStyle: {},
-  messageTextStyle: {},
   nextMessage: {},
   onLongPress: null,
   previousMessage: {},
   renderMessageImage: null,
   renderMessageText: null,
-  renderCustomView: null,
   renderTime: null,
-  tickStyle: {},
-  touchableProps: {},
-  wrapperStyle: {}
+  renderUsername: null,
+  touchableProps: {}
 };
 
-Bubble.propTypes = {
-  containerStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style
-  }),
-  containerToNextStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style
-  }),
-  containerToPreviousStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style
-  }),
+CustomMessageBubble.propTypes = {
   currentMessage: PropTypes.object,
   onLongPress: PropTypes.func,
-  messageTextStyle: Text.propTypes.style,
   nextMessage: PropTypes.object,
   previousMessage: PropTypes.object,
-  renderCustomView: PropTypes.func,
   renderMessageImage: PropTypes.func,
   renderMessageText: PropTypes.func,
-  renderTicks: PropTypes.func,
   renderTime: PropTypes.func,
   renderUsername: PropTypes.func,
-  tickStyle: Text.propTypes.style,
-  touchableProps: PropTypes.object,
-  user: PropTypes.object,
-  usernameStyle: Text.propTypes.style,
-  wrapperStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style
-  })
+  touchableProps: PropTypes.object
 };
 
-export default Bubble;
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'flex-start',
+    flex: 1
+  },
+  containerContent: {
+    justifyContent: 'flex-end',
+    minHeight: 16,
+    paddingRight: 16
+  },
+  containerMsgHeader: {
+    alignItems: 'baseline',
+    flexDirection: 'row',
+    marginTop: device.android ? -2 : 0
+  },
+  usernameText: {
+    ...gStyle.textLarsBold14,
+    color: colors.slackBlack,
+    marginRight: 8
+  },
+  containerTime: {
+    marginBottom: 0,
+    marginLeft: 0,
+    marginRight: 0
+  },
+  timeText: {
+    ...gStyle.textCiruBook12,
+    color: colors.greyTime
+  },
+  slackImage: {
+    borderRadius: 3,
+    marginLeft: 0,
+    marginRight: 0
+  },
+  slackMessageText: {
+    ...gStyle.textCiruBook14,
+    marginLeft: 0,
+    marginRight: 0
+  }
+});
+
+export default CustomMessageBubble;

@@ -15,6 +15,7 @@ class ChatScreen extends React.Component {
     };
 
     this.onSend = this.onSend.bind(this);
+    this.autoRespond = this.autoRespond.bind(this);
   }
 
   componentDidMount() {
@@ -26,9 +27,9 @@ class ChatScreen extends React.Component {
           createdAt: new Date(),
 
           user: {
-            _id: 2,
-            name: 'Caleb Nance',
-            avatar: images.profile
+            _id: 1,
+            avatar: images.profile,
+            name: 'Caleb Nance'
           }
         }
       ]
@@ -43,16 +44,40 @@ class ChatScreen extends React.Component {
 
     // if first message, add avatar image
     if (firstMessage) {
-      formattedMessage[0].user.avatar = images.user1;
+      formattedMessage[0].user.avatar = images.user2;
+      formattedMessage[0].user.name = 'Developer';
       formattedMessage[0].user._id = 3;
       this.setState({
         firstMessage: false
       });
+
+      // auto-respond
+      this.autoRespond();
     }
 
     this.setState(previousState => ({
       messages: GiftedChat.append(previousState.messages, formattedMessage)
     }));
+  }
+
+  autoRespond() {
+    const responseMsg = [
+      {
+        _id: 4,
+        text:
+          'Thanks checking this app clone out!\rSee more app clones on my github:\rhttps://github.com/calebnance/',
+        createdAt: new Date(),
+
+        user: {
+          avatar: images.profile,
+          name: 'Caleb Nance'
+        }
+      }
+    ];
+
+    setTimeout(() => {
+      this.onSend(responseMsg);
+    }, 2000);
   }
 
   render() {
@@ -62,10 +87,8 @@ class ChatScreen extends React.Component {
       <GiftedChat
         messages={messages}
         onSend={msgs => this.onSend(msgs)}
+        renderMessage={props => <CustomMessage {...props} />}
         user={{ _id: 1 }}
-        renderMessage={props => {
-          return <CustomMessage {...props} />;
-        }}
       />
     );
   }
