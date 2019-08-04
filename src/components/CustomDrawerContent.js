@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import { colors, device } from '../constants';
+import { colors, device, gStyle } from '../constants';
 
 class CustomDrawerContent extends React.Component {
   constructor(props) {
@@ -72,14 +72,13 @@ const styles = StyleSheet.create({
   },
   slide: {
     alignItems: 'center',
-    backgroundColor: '#3F0E40',
+    backgroundColor: colors.purple,
     flex: 1,
     justifyContent: 'center'
   },
   text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold'
+    ...gStyle.textLarsBold18,
+    color: colors.white
   }
 });
 

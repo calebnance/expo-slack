@@ -13,5 +13,6 @@ export default {
   red: '#e01e5a',
   yellow: '#ecb22e',
 
-  grey: '#333233'
+  grey: '#333233',
+  purple: '#3f0e40'
 };
