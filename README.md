@@ -1,5 +1,9 @@
 # Slack Clone with Expo
 
+<p align="center">
+  <img src="screenshots/screenshare-3.jpg?raw=true" />
+</p>
+
 ## Table of Contents
 
 - [Install & Build](#install--build)
