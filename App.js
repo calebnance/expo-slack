@@ -26,6 +26,12 @@ export default class App extends React.Component {
       );
     }
 
-    return <Stack />;
+    return (
+      <Stack
+        screenProps={{
+          drawerIsOpened: false
+        }}
+      />
+    );
   }
 }

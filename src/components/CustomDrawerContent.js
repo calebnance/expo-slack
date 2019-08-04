@@ -1,26 +1,38 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet, Text, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import { colors, device } from '../constants';
+import { colors, device, gStyle } from '../constants';
 
 class CustomDrawerContent extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      index: 0
+      index: 0,
+      shouldHide: true
     };
   }
 
-  componentDidMount() {
-    // weird paint of swiper doesn't work when index is 1
-    this.setState({
-      index: 1
-    });
+  componentDidUpdate() {
+    const { navigation } = this.props;
+    const { state: navState } = navigation;
+    const { index } = this.state;
+
+    if (index === 0 && navState.isDrawerOpen) {
+      this.setState({
+        index: 1,
+        shouldHide: false
+      });
+    }
   }
 
   render() {
-    const { index } = this.state;
+    const { index, shouldHide } = this.state;
+
+    if (shouldHide) {
+      return <View style={styles.slide} />;
+    }
 
     return (
       <Swiper
@@ -44,6 +56,11 @@ class CustomDrawerContent extends React.Component {
   }
 }
 
+CustomDrawerContent.propTypes = {
+  // required
+  navigation: PropTypes.object.isRequired
+};
+
 const styles = StyleSheet.create({
   pagination: {
     backgroundColor: colors.white10,
@@ -55,14 +72,13 @@ const styles = StyleSheet.create({
   },
   slide: {
     alignItems: 'center',
-    backgroundColor: '#3F0E40',
+    backgroundColor: colors.purple,
     flex: 1,
     justifyContent: 'center'
   },
   text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold'
+    ...gStyle.textLarsBold18,
+    color: colors.white
   }
 });
 
