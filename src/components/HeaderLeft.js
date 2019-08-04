@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity, View } from 'react-native';
+import { Keyboard, TouchableOpacity, View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { gStyle } from '../constants';
 
@@ -12,7 +12,10 @@ const HeaderLeft = ({ navigation }) => (
     <TouchableOpacity
       activeOpacity={gStyle.activeOpacity}
       hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}
-      onPress={() => navigation.openDrawer()}
+      onPress={() => {
+        Keyboard.dismiss();
+        navigation.openDrawer();
+      }}
     >
       <SvgSlackLogo />
     </TouchableOpacity>
