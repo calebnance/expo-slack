@@ -3,7 +3,11 @@ import { Dimensions, Platform } from 'react-native';
 // device
 // /////////////////////////////////////////////////////////////////////////////
 
+// android
+const android = Platform.OS === 'android';
+
 // is iPhoneX, iPhoneXs, iPhoneXr, iPhoneXs Max
+const iOS = Platform.OS === 'ios';
 const windowInfo = Dimensions.get('window');
 const { height, width } = windowInfo;
 const aspectRatio = height / width;
@@ -12,7 +16,7 @@ const aspectRatio = height / width;
 const { isPad } = Platform;
 
 let iPhoneX = false;
-if (Platform.OS === 'ios') {
+if (iOS) {
   // iphone screen breakdown
   // https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
   // http://iosres.com
@@ -22,8 +26,10 @@ if (Platform.OS === 'ios') {
 }
 
 export default {
+  android,
   aspectRatio,
   height,
+  iOS,
   iPhoneX,
   isPad,
   width

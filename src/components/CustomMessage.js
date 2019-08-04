@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, ViewPropTypes, StyleSheet } from 'react-native';
 import { Avatar, Day, utils } from 'react-native-gifted-chat';
+import { colors, gStyle } from '../constants';
 
 // components
 import CustomMessageBubble from './CustomMessageBubble';
 
 const { isSameUser, isSameDay } = utils;
 
-class Message extends React.Component {
+class CustomMessage extends React.Component {
   getInnerComponentProps() {
     const { containerStyle, ...props } = this.props;
+
     return {
       ...props,
       position: 'left',
@@ -28,7 +30,14 @@ class Message extends React.Component {
       if (renderDay) {
         return renderDay(dayProps);
       }
-      return <Day {...dayProps} />;
+
+      return (
+        <Day
+          {...dayProps}
+          containerStyle={styles.containerDay}
+          textStyle={styles.dayText}
+        />
+      );
     }
 
     return null;
@@ -78,6 +87,7 @@ class Message extends React.Component {
     return (
       <View>
         {this.renderDay()}
+
         <View style={[styles.container, { marginBottom }, containerStyle]}>
           {this.renderAvatar()}
           {this.renderBubble()}
@@ -87,23 +97,7 @@ class Message extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'flex-end',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    marginLeft: 8,
-    marginRight: 0
-  },
-  slackAvatar: {
-    // the bottom should roughly line up with the first line of message text.
-    borderRadius: 3,
-    height: 40,
-    width: 40
-  }
-});
-
-Message.defaultProps = {
+CustomMessage.defaultProps = {
   currentMessage: {},
   containerStyle: {},
   nextMessage: {},
@@ -114,7 +108,7 @@ Message.defaultProps = {
   user: {}
 };
 
-Message.propTypes = {
+CustomMessage.propTypes = {
   currentMessage: PropTypes.object,
   containerStyle: PropTypes.shape({
     left: ViewPropTypes.style,
@@ -128,4 +122,30 @@ Message.propTypes = {
   user: PropTypes.object
 };
 
-export default Message;
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    paddingHorizontal: 8
+  },
+  containerDay: {
+    alignItems: 'flex-start',
+    borderBottomColor: colors.greyLine,
+    borderBottomWidth: 1,
+    marginHorizontal: 8
+  },
+  dayText: {
+    ...gStyle.textLarsBold16,
+    color: colors.slackBlack,
+    paddingBottom: 2,
+    textAlign: 'left'
+  },
+  slackAvatar: {
+    // the bottom should roughly line up with the first line of message text.
+    borderRadius: 3,
+    height: 40,
+    width: 40
+  }
+});
+
+export default CustomMessage;

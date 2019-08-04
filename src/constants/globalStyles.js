@@ -49,6 +49,7 @@ export default {
   textCiruBold14: { fontFamily: fonts.circularProBold, fontSize: 14 },
   textCiruBold16: { fontFamily: fonts.circularProBold, fontSize: 16 },
   textCiruBold18: { fontFamily: fonts.circularProBold, fontSize: 18 },
+  textCiruBook12: { fontFamily: fonts.circularProBook, fontSize: 12 },
   textCiruBook14: { fontFamily: fonts.circularProBook, fontSize: 14 },
   textCiruBook16: { fontFamily: fonts.circularProBook, fontSize: 16 },
   textCiruBook18: { fontFamily: fonts.circularProBook, fontSize: 18 },
