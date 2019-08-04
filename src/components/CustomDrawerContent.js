@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet, Text, View } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { colors, device } from '../constants';
@@ -8,19 +9,30 @@ class CustomDrawerContent extends React.Component {
     super(props);
 
     this.state = {
-      index: 0
+      index: 0,
+      shouldHide: true
     };
   }
 
-  componentDidMount() {
-    // weird paint of swiper doesn't work when index is 1
-    this.setState({
-      index: 1
-    });
+  componentDidUpdate() {
+    const { navigation } = this.props;
+    const { state: navState } = navigation;
+    const { index } = this.state;
+
+    if (index === 0 && navState.isDrawerOpen) {
+      this.setState({
+        index: 1,
+        shouldHide: false
+      });
+    }
   }
 
   render() {
-    const { index } = this.state;
+    const { index, shouldHide } = this.state;
+
+    if (shouldHide) {
+      return <View style={styles.slide} />;
+    }
 
     return (
       <Swiper
@@ -43,6 +55,11 @@ class CustomDrawerContent extends React.Component {
     );
   }
 }
+
+CustomDrawerContent.propTypes = {
+  // required
+  navigation: PropTypes.object.isRequired
+};
 
 const styles = StyleSheet.create({
   pagination: {
