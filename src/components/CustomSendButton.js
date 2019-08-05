@@ -4,22 +4,20 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Send } from 'react-native-gifted-chat';
 import { colors, gStyle } from '../constants';
 
-class CustomSendButton extends React.PureComponent {
-  render() {
-    const { text } = this.props;
+const CustomSendButton = props => {
+  const { text } = props;
 
-    const isActive = text.length ? styles.btnActive : {};
-    const isActiveText = text.length ? styles.btnActiveText : {};
+  const isActive = text.length ? styles.btnActive : {};
+  const isActiveText = text.length ? styles.btnActiveText : {};
 
-    return (
-      <Send {...this.props} containerStyle={styles.container}>
-        <View style={[styles.btn, isActive]}>
-          <Text style={[styles.btnText, isActiveText]}>Send</Text>
-        </View>
-      </Send>
-    );
-  }
-}
+  return (
+    <Send {...props} containerStyle={styles.container}>
+      <View style={[styles.btn, isActive]}>
+        <Text style={[styles.btnText, isActiveText]}>Send</Text>
+      </View>
+    </Send>
+  );
+};
 
 CustomSendButton.propTypes = {
   // required
@@ -28,8 +26,7 @@ CustomSendButton.propTypes = {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    marginRight: 8
+    justifyContent: 'center'
   },
   btn: {
     backgroundColor: colors.white,

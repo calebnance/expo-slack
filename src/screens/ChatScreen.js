@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
 import { images } from '../constants';
 
 // components
+import CustomAccessoryBar from '../components/CustomAccessoryBar';
 import CustomMessage from '../components/CustomMessage';
-import CustomSendButton from '../components/CustomSendButton';
 
 class ChatScreen extends React.Component {
   constructor(props) {
@@ -82,10 +81,6 @@ class ChatScreen extends React.Component {
     }, 2000);
   }
 
-  // renderAccessory() {
-  //   return <View />;
-  // }
-
   render() {
     const { messages } = this.state;
 
@@ -94,9 +89,9 @@ class ChatScreen extends React.Component {
         alwaysShowSend
         messages={messages}
         onSend={msgs => this.onSend(msgs)}
-        // renderAccessory={this.renderAccessory}
+        renderAccessory={props => <CustomAccessoryBar {...props} />}
         renderMessage={props => <CustomMessage {...props} />}
-        renderSend={props => <CustomSendButton {...props} />}
+        renderSend={() => null}
         user={{ _id: 1 }}
       />
     );

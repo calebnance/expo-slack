@@ -4,7 +4,11 @@ import { Text, TouchableOpacity } from 'react-native';
 import { gStyle } from '../constants';
 
 const TouchText = ({ onPress, style, text, textStyle }) => (
-  <TouchableOpacity activeOpacity={0.7} onPress={onPress} style={style}>
+  <TouchableOpacity
+    activeOpacity={gStyle.activeOpacity}
+    onPress={onPress}
+    style={style}
+  >
     <Text style={[gStyle.textCiruBook14, textStyle]}>{text}</Text>
   </TouchableOpacity>
 );
