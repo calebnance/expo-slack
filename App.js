@@ -3,7 +3,7 @@ import { AppLoading } from 'expo';
 import { func } from './src/constants';
 
 // main navigation stack
-import Stack from './src/navigation/Stack';
+import MainStack from './src/navigation/MainStack';
 
 import DrawerRight from './src/components/DrawerRight';
 
@@ -39,7 +39,7 @@ export default class App extends React.Component {
 
     return (
       <React.Fragment>
-        <Stack
+        <MainStack
           screenProps={{
             drawerIsOpened: false,
             handleRightDrawer: this.handleRightDrawer
