@@ -3,6 +3,7 @@ import { GiftedChat } from 'react-native-gifted-chat';
 import { images } from '../constants';
 
 // components
+import CustomAccessoryBar from '../components/CustomAccessoryBar';
 import CustomMessage from '../components/CustomMessage';
 
 class ChatScreen extends React.Component {
@@ -85,9 +86,12 @@ class ChatScreen extends React.Component {
 
     return (
       <GiftedChat
+        alwaysShowSend
         messages={messages}
         onSend={msgs => this.onSend(msgs)}
+        renderAccessory={props => <CustomAccessoryBar {...props} />}
         renderMessage={props => <CustomMessage {...props} />}
+        renderSend={() => null}
         user={{ _id: 1 }}
       />
     );

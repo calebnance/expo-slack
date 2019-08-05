@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, ViewPropTypes, StyleSheet } from 'react-native';
+import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import { Avatar, Day, utils } from 'react-native-gifted-chat';
 import { colors, gStyle } from '../constants';
 

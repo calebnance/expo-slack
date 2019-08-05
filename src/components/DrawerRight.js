@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Animated, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Animated, ScrollView, StyleSheet, View } from 'react-native';
 import { colors, device } from '../constants';
 
 // components
@@ -70,7 +70,7 @@ class DrawerRight extends React.Component {
           </Animated.View>
 
           <ScrollView style={styles.scrollView}>
-            <Text>Hello</Text>
+            <View />
           </ScrollView>
         </View>
       </Animated.View>
