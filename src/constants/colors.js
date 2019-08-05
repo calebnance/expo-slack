@@ -15,9 +15,10 @@ export default {
   red: '#e01e5a',
   yellow: '#ecb22e',
 
-  slackBlack: '#1d1c1d',
+  blueSend: '#2e629e',
   grey: '#333233',
   greyTime: '#868686',
   greyLine: '#c6c6c6',
-  purple: '#3f0e40'
+  purple: '#3f0e40',
+  slackBlack: '#1d1c1d'
 };

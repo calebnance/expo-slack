@@ -1,9 +1,11 @@
 import React from 'react';
+import { Text, View } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
 import { images } from '../constants';
 
 // components
 import CustomMessage from '../components/CustomMessage';
+import CustomSendButton from '../components/CustomSendButton';
 
 class ChatScreen extends React.Component {
   constructor(props) {
@@ -80,14 +82,21 @@ class ChatScreen extends React.Component {
     }, 2000);
   }
 
+  // renderAccessory() {
+  //   return <View />;
+  // }
+
   render() {
     const { messages } = this.state;
 
     return (
       <GiftedChat
+        alwaysShowSend
         messages={messages}
         onSend={msgs => this.onSend(msgs)}
+        // renderAccessory={this.renderAccessory}
         renderMessage={props => <CustomMessage {...props} />}
+        renderSend={props => <CustomSendButton {...props} />}
         user={{ _id: 1 }}
       />
     );
