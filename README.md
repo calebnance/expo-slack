@@ -42,7 +42,15 @@ Run Project Locally: `expo start`
 
 ### version 0.0.1 (current)
 
-- initial navigation (chat and drawer with swipeable screens)
+- initial navigation
+  - chat
+    - custom AccessoryBar
+    - custom Message
+    - custom Message Bubble
+    - custom Send Button + different placement
+  - drawers
+    - left drawer using [createDrawerNavigator](https://reactnavigation.org/docs/en/drawer-navigator.html)
+    - custom right drawer
 - 3rd party packages used:
   - [Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat)
   - [Swiper Component](https://github.com/leecade/react-native-swiper)
