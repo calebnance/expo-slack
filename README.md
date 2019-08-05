@@ -1,7 +1,7 @@
 # Slack Clone with Expo
 
 <p align="center">
-  <img src="screenshots/screenshare-3.jpg?raw=true" />
+  <img src="screenshots/screenshare-3_v1.jpg?raw=true" />
 </p>
 
 ## Table of Contents
