@@ -22,7 +22,12 @@ import HeaderRight from '../components/HeaderRight';
 // create stack navigator
 const ChatStack = createStackNavigator(
   {
-    Chat,
+    Chat: {
+      screen: Chat,
+      navigationOptions: ({ screenProps }) => ({
+        headerRight: <HeaderRight screenProps={screenProps} />
+      })
+    },
     Notifications
   },
   {
