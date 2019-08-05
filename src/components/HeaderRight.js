@@ -9,11 +9,11 @@ import SvgBell from './icons/Svg.Bell';
 import SvgDotsVertical from './icons/Svg.DotsVertical';
 import SvgSearch from './icons/Svg.Search';
 
-const HeaderRight = ({ navigation }) => (
+const HeaderRight = ({ navigation, screenProps }) => (
   <View style={[gStyle.containerNavBlocks, gStyle.flexRowCenter]}>
     <TouchableOpacity
       activeOpacity={gStyle.activeOpacity}
-      hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}
+      hitSlop={{ top: 10, left: 16, bottom: 10, right: 8 }}
       onPress={() => navigation.navigate('Notifications')}
       style={gStyle.mR16}
     >
@@ -21,7 +21,7 @@ const HeaderRight = ({ navigation }) => (
     </TouchableOpacity>
     <TouchableOpacity
       activeOpacity={gStyle.activeOpacity}
-      hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}
+      hitSlop={{ top: 10, left: 8, bottom: 10, right: 8 }}
       onPress={() => null}
       style={gStyle.mR16}
     >
@@ -29,8 +29,8 @@ const HeaderRight = ({ navigation }) => (
     </TouchableOpacity>
     <TouchableOpacity
       activeOpacity={gStyle.activeOpacity}
-      hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}
-      onPress={() => null}
+      hitSlop={{ top: 10, left: 8, bottom: 10, right: 16 }}
+      onPress={() => screenProps.handleRightDrawer(true)}
       style={gStyle.mR16}
     >
       <SvgDotsVertical />
@@ -40,7 +40,8 @@ const HeaderRight = ({ navigation }) => (
 
 HeaderRight.propTypes = {
   // required
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
+  screenProps: PropTypes.object.isRequired
 };
 
 export default withNavigation(HeaderRight);
