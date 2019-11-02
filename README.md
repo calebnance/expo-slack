@@ -21,7 +21,7 @@ Run Project Locally: `yarn dev` or `expo start`
 
 ## Stats
 
-- Expo SDK 34
+- Expo SDK 35
 - React Navigation v3
 - PropTypes
 - [Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat)
@@ -42,6 +42,7 @@ Run Project Locally: `yarn dev` or `expo start`
 
 ### version 0.0.1 (current)
 
+- upgraded to [Expo SDK 35](https://blog.expo.io/expo-sdk-35-is-now-available-beee0dfafbf4)
 - initial navigation
   - chat
     - custom AccessoryBar
