@@ -1,13 +1,11 @@
 import { Dimensions, Platform } from 'react-native';
 
-// device
-// /////////////////////////////////////////////////////////////////////////////
-
 // android
 const android = Platform.OS === 'android';
 
 // is iPhoneX, iPhoneXs, iPhoneXr, iPhoneXs Max
 const iOS = Platform.OS === 'ios';
+const web = Platform.OS === 'web';
 const windowInfo = Dimensions.get('window');
 const { height, width } = windowInfo;
 const aspectRatio = height / width;
@@ -32,5 +30,6 @@ export default {
   iOS,
   iPhoneX,
   isPad,
+  web,
   width
 };
