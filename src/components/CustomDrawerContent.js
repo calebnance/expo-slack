@@ -12,6 +12,8 @@ class CustomDrawerContent extends React.Component {
       index: 0,
       shouldHide: true
     };
+
+    console.disableYellowBox = true;
   }
 
   componentDidUpdate() {
