@@ -50,6 +50,7 @@ Run Project Locally: `expo start` or `yarn dev`
 
 - upgraded to [Expo SDK 36](https://blog.expo.io/expo-sdk-36-is-now-available-b91897b437fe)
 - upgraded to [Expo SDK 35](https://blog.expo.io/expo-sdk-35-is-now-available-beee0dfafbf4)
+- started with [React Navigation v3](https://reactnavigation.org/docs/3.x/getting-started)
 - initial navigation
   - chat
     - custom AccessoryBar
@@ -57,7 +58,7 @@ Run Project Locally: `expo start` or `yarn dev`
     - custom Message Bubble
     - custom Send Button + different placement
   - drawers
-    - left drawer using [createDrawerNavigator](https://reactnavigation.org/docs/en/drawer-navigator.html)
+    - left drawer using [createDrawerNavigator](https://reactnavigation.org/docs/3.x/drawer-based-navigation/)
     - custom right drawer
 - 3rd party packages used:
   - [Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat)
