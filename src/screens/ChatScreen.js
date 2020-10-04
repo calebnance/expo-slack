@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
 import { images } from '../constants';
 
