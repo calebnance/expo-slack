@@ -21,4 +21,4 @@ SvgSearch.propTypes = {
   size: PropTypes.number
 };
 
-export default SvgSearch;
+export default React.memo(SvgSearch);

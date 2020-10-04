@@ -33,4 +33,4 @@ SvgSlackLogo.propTypes = {
   size: PropTypes.number
 };
 
-export default SvgSlackLogo;
+export default React.memo(SvgSlackLogo);

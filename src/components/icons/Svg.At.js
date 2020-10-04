@@ -21,4 +21,4 @@ SvgAt.propTypes = {
   size: PropTypes.number
 };
 
-export default SvgAt;
+export default React.memo(SvgAt);

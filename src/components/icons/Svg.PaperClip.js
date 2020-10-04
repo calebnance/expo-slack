@@ -21,4 +21,4 @@ SvgPaperClip.propTypes = {
   size: PropTypes.number
 };
 
-export default SvgPaperClip;
+export default React.memo(SvgPaperClip);

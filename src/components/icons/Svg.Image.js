@@ -21,4 +21,4 @@ SvgImage.propTypes = {
   size: PropTypes.number
 };
 
-export default SvgImage;
+export default React.memo(SvgImage);

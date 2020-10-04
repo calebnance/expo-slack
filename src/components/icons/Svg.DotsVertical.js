@@ -21,4 +21,4 @@ SvgDotsVertical.propTypes = {
   size: PropTypes.number
 };
 
-export default SvgDotsVertical;
+export default React.memo(SvgDotsVertical);
