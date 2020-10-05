@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { AppLoading } from 'expo';
-import { func } from './src/constants';
+import { AppLoading, registerRootComponent } from 'expo';
+import { func } from './constants';
 
 // main navigation stack
-import MainStack from './src/navigation/MainStack';
+import MainStack from './navigation/MainStack';
 
 // components
-import DrawerRight from './src/components/DrawerRight';
+import DrawerRight from './components/DrawerRight';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
 
@@ -57,3 +57,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+registerRootComponent(App);
