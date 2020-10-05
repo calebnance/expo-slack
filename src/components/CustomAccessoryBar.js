@@ -10,7 +10,7 @@ import SvgAt from './icons/Svg.At';
 import SvgImage from './icons/Svg.Image';
 import SvgPaperClip from './icons/Svg.PaperClip';
 
-const CustomAccessoryBar = props => (
+const CustomAccessoryBar = (props) => (
   <View style={[gStyle.flexRowCenter, gStyle.pH8]}>
     <View style={[gStyle.flexRow, gStyle.flex4]}>
       <View style={gStyle.mR16}>

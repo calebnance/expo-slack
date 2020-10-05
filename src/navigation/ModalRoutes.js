@@ -6,7 +6,7 @@ const iosModalRoutes = ['Notifications'];
 
 export default (transitionProps, prevTransitionProps) => {
   const isModal = iosModalRoutes.some(
-    screenName =>
+    (screenName) =>
       screenName === transitionProps.scene.route.routeName ||
       (prevTransitionProps &&
         screenName === prevTransitionProps.scene.route.routeName)

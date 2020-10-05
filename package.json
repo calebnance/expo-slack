@@ -10,7 +10,7 @@
     "react navigation",
     "slack"
   ],
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "src/App.js",
   "scripts": {
     "dev": "expo start",
     "start": "expo start",
@@ -31,26 +31,29 @@
     "react-native-gesture-handler": "~1.7.0",
     "react-native-gifted-chat": "^0.16.3",
     "react-native-reanimated": "~1.13.0",
+    "react-native-screens": "~2.10.1",
     "react-native-svg": "12.1.0",
     "react-native-swiper": "^1.6.0",
     "react-native-web": "~0.13.7",
     "react-navigation": "^3.11.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.2",
+    "@babel/core": "^7.11.5",
+    "babel-eslint": "^10.1.0",
     "babel-preset-expo": "^8.3.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-import-helpers": "^1.0.1",
-    "eslint-plugin-jsx-a11y": "^6.2.2",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.2",
-    "prettier": "^1.18.2"
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "prettier": "^2.1.1"
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "none"
   },
   "eslintIgnore": [
     "babel.config.js"

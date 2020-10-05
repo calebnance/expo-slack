@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Send } from 'react-native-gifted-chat';
 import { colors, gStyle } from '../constants';
 
-const CustomSendButton = props => {
+const CustomSendButton = (props) => {
   const { text } = props;
 
   const isActive = text.length ? styles.btnActive : {};
