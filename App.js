@@ -18,6 +18,8 @@ export default class App extends React.Component {
     };
 
     this.handleRightDrawer = this.handleRightDrawer.bind(this);
+
+    console.disableYellowBox = true;
   }
 
   handleRightDrawer(show) {

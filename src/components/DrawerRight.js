@@ -41,12 +41,14 @@ class DrawerRight extends React.Component {
 
     Animated.timing(background, {
       duration: show ? 300 : 100,
-      toValue: show ? 60 : 0
+      toValue: show ? 60 : 0,
+      useNativeDriver: false
     }).start();
 
     Animated.timing(position, {
       duration: 300,
-      toValue: show ? 0 : device.width
+      toValue: show ? 0 : device.width,
+      useNativeDriver: false
     }).start();
   }
 
