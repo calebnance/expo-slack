@@ -5,6 +5,7 @@ import { func } from './src/constants';
 // main navigation stack
 import MainStack from './src/navigation/MainStack';
 
+// components
 import DrawerRight from './src/components/DrawerRight';
 
 export default class App extends React.Component {

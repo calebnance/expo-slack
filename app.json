@@ -1,11 +1,10 @@
 {
   "expo": {
     "name": "Expo Slack",
-    "description": "slack clone with expo",
+    "description": "Slack UI Clone with Expo",
     "scheme": "slackclone",
     "slug": "slackclone",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "version": "0.0.1",
     "platforms": ["android", "ios", "web"],
     "githubUrl": "https://github.com/calebnance/expo-slack",
