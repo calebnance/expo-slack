@@ -42,7 +42,7 @@ class CustomMessageBubble extends React.Component {
           options,
           cancelButtonIndex
         },
-        buttonIndex => {
+        (buttonIndex) => {
           switch (buttonIndex) {
             default:
             case 0:

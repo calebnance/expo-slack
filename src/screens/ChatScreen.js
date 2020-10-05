@@ -56,7 +56,7 @@ class ChatScreen extends React.Component {
       this.autoRespond();
     }
 
-    this.setState(previousState => ({
+    this.setState((previousState) => ({
       messages: GiftedChat.append(previousState.messages, formattedMessage)
     }));
   }
@@ -88,9 +88,9 @@ class ChatScreen extends React.Component {
       <GiftedChat
         alwaysShowSend
         messages={messages}
-        onSend={msgs => this.onSend(msgs)}
-        renderAccessory={props => <CustomAccessoryBar {...props} />}
-        renderMessage={props => <CustomMessage {...props} />}
+        onSend={(msgs) => this.onSend(msgs)}
+        renderAccessory={(props) => <CustomAccessoryBar {...props} />}
+        renderMessage={(props) => <CustomMessage {...props} />}
         renderSend={() => null}
         user={{ _id: 1 }}
       />
