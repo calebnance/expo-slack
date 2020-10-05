@@ -5,15 +5,13 @@ import Swiper from 'react-native-swiper';
 import { colors, device, gStyle } from '../constants';
 
 class CustomDrawerContent extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       index: 0,
       shouldHide: true
     };
-
-    console.disableYellowBox = true;
   }
 
   componentDidUpdate() {

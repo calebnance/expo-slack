@@ -30,10 +30,10 @@
     "react-dom": "16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
     "react-native-gesture-handler": "~1.6.0",
-    "react-native-gifted-chat": "^0.13.0",
+    "react-native-gifted-chat": "^0.16.3",
     "react-native-reanimated": "~1.7.0",
     "react-native-svg": "11.0.1",
-    "react-native-swiper": "^1.5.14",
+    "react-native-swiper": "^1.6.0",
     "react-native-web": "^0.11.7",
     "react-navigation": "^3.11.1"
   },
