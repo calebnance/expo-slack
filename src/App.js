@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { AppLoading, registerRootComponent } from 'expo';
+import { LogBox } from 'react-native';
+import { registerRootComponent } from 'expo';
+import AppLoading from 'expo-app-loading';
 import { func } from './constants';
 
 // main navigation stack
@@ -19,7 +21,7 @@ class App extends React.Component {
 
     this.handleRightDrawer = this.handleRightDrawer.bind(this);
 
-    console.disableYellowBox = true;
+    LogBox.ignoreAllLogs(true);
   }
 
   handleRightDrawer(show) {
@@ -34,6 +36,7 @@ class App extends React.Component {
     if (isLoading) {
       return (
         <AppLoading
+          onError={console.warn}
           onFinish={() => this.setState({ isLoading: false })}
           startAsync={func.loadAssetsAsync}
         />
