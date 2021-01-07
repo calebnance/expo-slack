@@ -21,6 +21,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/masked-view": "0.1.10",
     "expo": "^40.0.0",
     "expo-app-loading": "^1.0.1",
     "expo-asset": "~8.2.1",
@@ -32,11 +33,15 @@
     "react-native-gesture-handler": "~1.8.0",
     "react-native-gifted-chat": "^0.16.3",
     "react-native-reanimated": "~1.13.0",
+    "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "~2.15.0",
     "react-native-svg": "12.1.0",
     "react-native-swiper": "^1.6.0",
     "react-native-web": "~0.13.12",
-    "react-navigation": "^3.11.1"
+    "react-navigation": "^4.4.3",
+    "react-navigation-drawer": "^2.6.0",
+    "react-navigation-stack": "^2.10.2",
+    "react-navigation-tabs": "^2.10.1"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
@@ -50,6 +55,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.1.1"
   },
   "prettier": {

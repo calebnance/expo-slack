@@ -1,5 +1,6 @@
 import { StatusBar } from 'react-native';
-import { createAppContainer, createDrawerNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 import { colors, device } from '../constants';
 
 // stacks
