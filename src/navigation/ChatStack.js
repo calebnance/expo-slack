@@ -1,9 +1,6 @@
 import * as React from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import { gStyle } from '../constants';
-
-// get modal routes
-import ModalRoutes from './ModalRoutes';
 
 // screens
 import Chat from '../screens/ChatScreen';
@@ -19,19 +16,22 @@ const ChatStack = createStackNavigator(
     Chat: {
       screen: Chat,
       navigationOptions: ({ screenProps }) => ({
-        headerRight: <HeaderRight screenProps={screenProps} />
+        headerRight: () => <HeaderRight screenProps={screenProps} />
       })
     },
+
+    // Modals
+    // /////////////////////////////////////////////////////////////////////////
     Notifications
   },
   {
     initialRouteName: 'Chat',
     defaultNavigationOptions: {
-      headerLeft: <HeaderLeft />,
-      headerRight: <HeaderRight />,
+      headerLeft: () => <HeaderLeft />,
+      headerRight: () => <HeaderRight />,
       headerTitleStyle: gStyle.textLarsBold16
     },
-    transitionConfig: ModalRoutes
+    mode: 'modal'
   }
 );
 

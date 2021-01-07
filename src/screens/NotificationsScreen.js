@@ -7,14 +7,14 @@ import TouchText from '../components/TouchText';
 
 class NotificationsScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    headerLeft: (
+    headerLeft: () => (
       <TouchText
         onPress={() => navigation.goBack(null)}
         style={gStyle.mL16}
         text="Cancel"
       />
     ),
-    headerRight: (
+    headerRight: () => (
       <TouchText
         onPress={() => navigation.goBack(null)}
         style={gStyle.mR16}
