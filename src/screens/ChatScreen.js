@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { View } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
-import { images } from '../constants';
+import { colors, images } from '../constants';
 
 // components
 import CustomAccessoryBar from '../components/CustomAccessoryBar';
@@ -85,15 +86,17 @@ class ChatScreen extends React.Component {
     const { messages } = this.state;
 
     return (
-      <GiftedChat
-        alwaysShowSend
-        messages={messages}
-        onSend={(msgs) => this.onSend(msgs)}
-        renderAccessory={(props) => <CustomAccessoryBar {...props} />}
-        renderMessage={(props) => <CustomMessage {...props} />}
-        renderSend={() => null}
-        user={{ _id: 1 }}
-      />
+      <View style={{ backgroundColor: colors.white, flex: 1 }}>
+        <GiftedChat
+          alwaysShowSend
+          messages={messages}
+          onSend={(msgs) => this.onSend(msgs)}
+          renderAccessory={(props) => <CustomAccessoryBar {...props} />}
+          renderMessage={(props) => <CustomMessage {...props} />}
+          renderSend={() => null}
+          user={{ _id: 1 }}
+        />
+      </View>
     );
   }
 }

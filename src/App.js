@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LogBox } from 'react-native';
+import { LogBox, StatusBar } from 'react-native';
 import { registerRootComponent } from 'expo';
 import AppLoading from 'expo-app-loading';
 import { func } from './constants';
@@ -56,6 +56,8 @@ class App extends React.Component {
           handleRightDrawer={this.handleRightDrawer}
           show={drawerRightIsOpened}
         />
+
+        <StatusBar barStyle="dark-content" />
       </React.Fragment>
     );
   }
