@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     left: device.width / 2 - 26,
     paddingVertical: 2,
-    bottom: device.iPhoneX ? 36 : 24,
+    bottom: device.iPhoneNotch ? 36 : 24,
     width: 54
   },
   slide: {

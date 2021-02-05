@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     backgroundColor: colors.white,
-    paddingTop: device.iPhoneX ? 44 : 0,
+    paddingTop: device.iPhoneNotch ? 44 : 0,
     width: '80%'
   }
 });
