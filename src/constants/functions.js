@@ -1,5 +1,4 @@
 import { Image } from 'react-native';
-import { Permissions } from 'expo';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 
@@ -33,27 +32,8 @@ const loadAssetsAsync = async () => {
   return Promise.all([...fontAssets, ...imageAssets]);
 };
 
-// camera permissions
-// /////////////////////////////////////////////////////////////////////////////
-const cameraAccessAsync = async () => {
-  // get exisiting camera permissions first
-  const { status: existingStatus } = await Permissions.getAsync(
-    Permissions.CAMERA
-  );
-  let finalStatus = existingStatus;
-
-  // ask again to grant camera permissions (if not already allowed)
-  if (existingStatus !== 'granted') {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA);
-    finalStatus = status;
-  }
-
-  return finalStatus === 'granted';
-};
-
 export default {
   cacheFonts,
   cacheImages,
-  loadAssetsAsync,
-  cameraAccessAsync
+  loadAssetsAsync
 };
