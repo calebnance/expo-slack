@@ -1,30 +1,27 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import { Keyboard, TouchableOpacity, View } from 'react-native';
-import { withNavigation } from 'react-navigation';
+import { TouchableOpacity, View } from 'react-native';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
 import { gStyle } from '../constants';
 
 // icons
 import SvgSlackLogo from './icons/Svg.SlackLogo';
 
-const HeaderLeft = ({ navigation }) => (
-  <View style={gStyle.containerNavBlocks}>
-    <TouchableOpacity
-      activeOpacity={gStyle.activeOpacity}
-      hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}
-      onPress={() => {
-        Keyboard.dismiss();
-        navigation.openDrawer();
-      }}
-    >
-      <SvgSlackLogo />
-    </TouchableOpacity>
-  </View>
-);
+const HeaderLeft = () => {
+  const navigation = useNavigation();
 
-HeaderLeft.propTypes = {
-  // required
-  navigation: PropTypes.object.isRequired
+  return (
+    <View style={gStyle.containerNavBlocks}>
+      <TouchableOpacity
+        activeOpacity={gStyle.activeOpacity}
+        hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }}
+        onPress={() => {
+          navigation.dispatch(DrawerActions.openDrawer());
+        }}
+      >
+        <SvgSlackLogo />
+      </TouchableOpacity>
+    </View>
+  );
 };
 
-export default withNavigation(HeaderLeft);
+export default HeaderLeft;

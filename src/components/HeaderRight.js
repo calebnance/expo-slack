@@ -1,7 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity, View } from 'react-native';
-import { withNavigation } from 'react-navigation';
 import { gStyle } from '../constants';
 
 // icons
@@ -9,7 +8,7 @@ import SvgBell from './icons/Svg.Bell';
 import SvgDotsVertical from './icons/Svg.DotsVertical';
 import SvgSearch from './icons/Svg.Search';
 
-const HeaderRight = ({ navigation, screenProps }) => (
+const HeaderRight = ({ navigation }) => (
   <View style={[gStyle.containerNavBlocks, gStyle.flexRowCenter]}>
     <TouchableOpacity
       activeOpacity={gStyle.activeOpacity}
@@ -30,7 +29,7 @@ const HeaderRight = ({ navigation, screenProps }) => (
     <TouchableOpacity
       activeOpacity={gStyle.activeOpacity}
       hitSlop={{ top: 10, left: 8, bottom: 10, right: 16 }}
-      onPress={() => screenProps.handleRightDrawer(true)}
+      onPress={() => null}
       style={gStyle.mR16}
     >
       <SvgDotsVertical />
@@ -40,8 +39,7 @@ const HeaderRight = ({ navigation, screenProps }) => (
 
 HeaderRight.propTypes = {
   // required
-  navigation: PropTypes.object.isRequired,
-  screenProps: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired
 };
 
-export default withNavigation(HeaderRight);
+export default HeaderRight;

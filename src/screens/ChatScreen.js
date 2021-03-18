@@ -8,8 +8,8 @@ import CustomAccessoryBar from '../components/CustomAccessoryBar';
 import CustomMessage from '../components/CustomMessage';
 
 class ChatScreen extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       firstMessage: true,
