@@ -11,8 +11,8 @@ import MainStack from './navigation/MainStack';
 import DrawerRight from './components/DrawerRight';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       isLoading: true,

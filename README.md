@@ -25,7 +25,7 @@ Run Project Locally: `expo start` or `yarn dev`
 
 ## Stats
 
-- Expo SDK 40
+- Expo SDK 41
 - React Navigation v5
 - PropTypes
 - [Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat)
@@ -48,6 +48,7 @@ Run Project Locally: `expo start` or `yarn dev`
 
 ### version 0.0.1 (current)
 
+- upgraded to [Expo SDK 41](https://blog.expo.io/expo-sdk-41-12cc5232f2ef)
 - upgraded to [React Navigation v5](https://reactnavigation.org/docs/getting-started)
 - upgraded to [Expo SDK 40](https://blog.expo.io/expo-sdk-40-is-now-available-d4d73e67da33)
 - upgraded to [Expo SDK 39](https://dev.to/expo/expo-sdk-39-is-now-available-1lm8)
