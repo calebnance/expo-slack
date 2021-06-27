@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
   pagination: {
     backgroundColor: colors.white10,
     borderRadius: 12,
+    bottom: device.iPhoneNotch ? 36 : 24,
     left: device.width / 2 - 74,
     paddingVertical: 2,
-    bottom: device.iPhoneNotch ? 36 : 24,
     width: 54
   },
   slide: {

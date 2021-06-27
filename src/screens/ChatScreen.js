@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
-import { colors, images } from '../constants';
+import { colors, gStyle, images } from '../constants';
 
 // components
 import CustomAccessoryBar from '../components/CustomAccessoryBar';
@@ -86,7 +86,7 @@ class ChatScreen extends React.Component {
     const { messages } = this.state;
 
     return (
-      <View style={{ backgroundColor: colors.white, flex: 1 }}>
+      <View style={styles.container}>
         <GiftedChat
           alwaysShowSend
           messages={messages}
@@ -100,5 +100,12 @@ class ChatScreen extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    ...gStyle.flex1,
+    backgroundColor: colors.white
+  }
+});
 
 export default ChatScreen;
