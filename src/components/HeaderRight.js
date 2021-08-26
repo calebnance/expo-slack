@@ -4,9 +4,9 @@ import { TouchableOpacity, View } from 'react-native';
 import { gStyle } from '../constants';
 
 // icons
-import SvgBell from './icons/Svg.Bell';
-import SvgDotsVertical from './icons/Svg.DotsVertical';
-import SvgSearch from './icons/Svg.Search';
+import SvgBell from '../icons/Svg.Bell';
+import SvgDotsVertical from '../icons/Svg.DotsVertical';
+import SvgSearch from '../icons/Svg.Search';
 
 const HeaderRight = ({ navigation }) => (
   <View style={[gStyle.containerNavBlocks, gStyle.flexRowCenter]}>
