@@ -24,7 +24,7 @@ Run Project Locally: `expo start` or `yarn dev`
 ## Stats
 
 - Expo SDK 42
-- React Navigation v5
+- React Navigation v6
 - PropTypes
 - [Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat)
 - [Swiper Component](https://github.com/leecade/react-native-swiper)
