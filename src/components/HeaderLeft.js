@@ -4,7 +4,7 @@ import { DrawerActions, useNavigation } from '@react-navigation/native';
 import { gStyle } from '../constants';
 
 // icons
-import SvgSlackLogo from './icons/Svg.SlackLogo';
+import SvgSlackLogo from '../icons/Svg.SlackLogo';
 
 const HeaderLeft = () => {
   const navigation = useNavigation();
