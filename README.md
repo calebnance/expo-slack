@@ -9,7 +9,7 @@
 ## Table of Contents
 
 - [Install & Build](#install--build)
-- [Stats](#stats)
+- [Features](#features)
 - [Linting](#linting)
 - [Demo & Release Notes](#release-notes)
 
@@ -21,9 +21,9 @@ Install: `yarn` or `yarn install`
 
 Run Project Locally: `expo start` or `yarn dev`
 
-## Stats
+## Features
 
-- Expo SDK 42
+- Expo SDK 43
 - React Navigation v6
 - PropTypes
 - [Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat)
@@ -46,6 +46,7 @@ Run Project Locally: `expo start` or `yarn dev`
 
 ### version 0.0.1 (current)
 
+- upgraded to [Expo SDK 43](https://blog.expo.dev/expo-sdk-43-aa9b3c7d5541)
 - upgraded to [React Navigation v6](https://reactnavigation.org/docs/getting-started)
 - upgraded to [Expo SDK 42](https://blog.expo.io/expo-sdk-42-579aee2348b6)
 - upgraded to [Expo SDK 41](https://blog.expo.io/expo-sdk-41-12cc5232f2ef)
