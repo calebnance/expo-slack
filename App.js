@@ -29,7 +29,6 @@ const App = () => {
   }, []);
 
   React.useEffect(() => {
-    console.log('wat');
     // if loading is completed
     if (isLoading === false) {
       // hide splash function
