@@ -5,7 +5,7 @@
     "scheme": "slackclone",
     "slug": "slackclone",
     "privacy": "public",
-    "version": "0.0.1",
+    "version": "0.4.0",
     "platforms": ["android", "ios", "web"],
     "githubUrl": "https://github.com/calebnance/expo-slack",
     "orientation": "portrait",
@@ -21,10 +21,10 @@
     },
     "assetBundlePatterns": ["**/*"],
     "android": {
-      "versionCode": 1
+      "versionCode": 40
     },
     "ios": {
-      "buildNumber": "0.0.1",
+      "buildNumber": "0.4.0",
       "supportsTablet": true
     }
   }

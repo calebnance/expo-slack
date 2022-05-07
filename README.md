@@ -23,7 +23,7 @@ Run Project Locally: `expo start` or `yarn dev`
 
 ## Features
 
-- Expo SDK 44
+- Expo SDK 45
 - React Navigation v6
 - PropTypes
 - [Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat)
@@ -44,18 +44,28 @@ Run Project Locally: `expo start` or `yarn dev`
 
 ## Release Notes
 
-### version 0.0.1 (current)
+**version 0.4.0 (current)**
 
+- upgraded to [Expo SDK 45](https://blog.expo.dev/expo-sdk-45-f4e332954a68)
 - upgraded to [Expo SDK 44](https://blog.expo.dev/expo-sdk-44-4c4b8306584a)
 - upgraded to [Expo SDK 43](https://blog.expo.dev/expo-sdk-43-aa9b3c7d5541)
 - upgraded to [React Navigation v6](https://reactnavigation.org/docs/getting-started)
+
+**version 0.3.0**
+
 - upgraded to [Expo SDK 42](https://blog.expo.io/expo-sdk-42-579aee2348b6)
 - upgraded to [Expo SDK 41](https://blog.expo.io/expo-sdk-41-12cc5232f2ef)
 - upgraded to [React Navigation v5](https://reactnavigation.org/docs/5.x/getting-started)
+
+**version 0.2.0**
+
 - upgraded to [Expo SDK 40](https://blog.expo.io/expo-sdk-40-is-now-available-d4d73e67da33)
 - upgraded to [Expo SDK 39](https://dev.to/expo/expo-sdk-39-is-now-available-1lm8)
 - upgraded to [React Navigation v4](https://reactnavigation.org/docs/4.x/getting-started)
 - upgraded to [Expo SDK 38](https://blog.expo.io/expo-sdk-38-is-now-available-ab6cd30ca2ee)
+
+**version 0.1.0**
+
 - upgraded to [Expo SDK 37](https://blog.expo.io/expo-sdk-37-is-now-available-dd5770f066a6)
 - upgraded to [Expo SDK 36](https://blog.expo.io/expo-sdk-36-is-now-available-b91897b437fe)
 - upgraded to [Expo SDK 35](https://blog.expo.io/expo-sdk-35-is-now-available-beee0dfafbf4)

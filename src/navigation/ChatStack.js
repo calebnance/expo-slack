@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { gStyle } from '../constants';
 
 // screens
@@ -11,7 +11,7 @@ import HeaderLeft from '../components/HeaderLeft';
 import HeaderRight from '../components/HeaderRight';
 import TouchText from '../components/TouchText';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default () => (
   <Stack.Navigator screenOptions={{ presentation: 'modal' }}>
