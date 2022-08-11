@@ -66,8 +66,7 @@ class ChatScreen extends React.Component {
     const responseMsg = [
       {
         _id: 4,
-        text:
-          'Thanks for checking this app clone out!\rSee more app clones on my github:\rhttps://github.com/calebnance/',
+        text: 'Thanks for checking this app clone out!\rSee more app clones on my github:\rhttps://github.com/calebnance/',
         createdAt: new Date(),
 
         user: {
