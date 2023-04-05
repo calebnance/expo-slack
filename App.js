@@ -9,7 +9,7 @@ import RootStack from './src/navigation/RootStack';
 // keeps the splash screen visible while assets are cached
 SplashScreen.preventAutoHideAsync();
 
-const App = () => {
+function App() {
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -48,6 +48,6 @@ const App = () => {
       <View onLayout={onLayoutRootView} />
     </React.Fragment>
   );
-};
+}
 
 export default App;
