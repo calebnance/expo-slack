@@ -30,7 +30,6 @@ const HeaderRight = ({ navigation }) => (
       activeOpacity={gStyle.activeOpacity}
       hitSlop={{ top: 10, left: 8, bottom: 10, right: 16 }}
       onPress={() => null}
-      style={gStyle.mR16}
     >
       <SvgDotsVertical />
     </TouchableOpacity>

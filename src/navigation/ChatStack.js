@@ -29,16 +29,11 @@ export default () => (
       component={Notifications}
       options={({ navigation }) => ({
         headerLeft: () => (
-          <TouchText
-            onPress={() => navigation.goBack(null)}
-            style={gStyle.mL16}
-            text="Cancel"
-          />
+          <TouchText onPress={() => navigation.goBack(null)} text="Cancel" />
         ),
         headerRight: () => (
           <TouchText
             onPress={() => navigation.goBack(null)}
-            style={gStyle.mR16}
             text="Save"
             textStyle={gStyle.textCiruBook14}
           />
