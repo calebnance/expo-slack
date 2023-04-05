@@ -10,17 +10,21 @@ import CustomDrawerContent from '../components/CustomDrawerContent';
 
 const Drawer = createDrawerNavigator();
 
-export default () => (
-  <NavigationContainer>
-    <Drawer.Navigator
-      drawerType="slide"
-      drawerContent={(props) => <CustomDrawerContent {...props} />}
-      hideStatusBar
-      screenOptions={{
-        headerShown: false
-      }}
-    >
-      <Drawer.Screen name="ChatStack" component={ChatStack} />
-    </Drawer.Navigator>
-  </NavigationContainer>
-);
+function RootStack() {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator
+        drawerType="slide"
+        drawerContent={(props) => <CustomDrawerContent {...props} />}
+        hideStatusBar
+        screenOptions={{
+          headerShown: false
+        }}
+      >
+        <Drawer.Screen name="ChatStack" component={ChatStack} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default RootStack;

@@ -6,7 +6,7 @@ import { gStyle } from '../constants';
 // icons
 import SvgSlackLogo from '../icons/Svg.SlackLogo';
 
-const HeaderLeft = () => {
+function HeaderLeft() {
   const navigation = useNavigation();
 
   return (
@@ -22,6 +22,6 @@ const HeaderLeft = () => {
       </TouchableOpacity>
     </View>
   );
-};
+}
 
 export default HeaderLeft;

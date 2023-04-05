@@ -3,24 +3,26 @@ import { StyleSheet, Text, View } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { colors, device, gStyle } from '../constants';
 
-const CustomDrawerContent = () => (
-  <Swiper
-    activeDotColor={colors.white}
-    dotColor={colors.black40}
-    loop={false}
-    paginationStyle={styles.pagination}
-  >
-    <View style={styles.slide}>
-      <Text style={styles.text}>Workspaces</Text>
-    </View>
-    <View style={styles.slide}>
-      <Text style={styles.text}>Threads</Text>
-    </View>
-    <View style={styles.slide}>
-      <Text style={styles.text}>Direct Messages</Text>
-    </View>
-  </Swiper>
-);
+function CustomDrawerContent() {
+  return (
+    <Swiper
+      activeDotColor={colors.white}
+      dotColor={colors.black40}
+      loop={false}
+      paginationStyle={styles.pagination}
+    >
+      <View style={styles.slide}>
+        <Text style={styles.text}>Workspaces</Text>
+      </View>
+      <View style={styles.slide}>
+        <Text style={styles.text}>Threads</Text>
+      </View>
+      <View style={styles.slide}>
+        <Text style={styles.text}>Direct Messages</Text>
+      </View>
+    </Swiper>
+  );
+}
 
 const styles = StyleSheet.create({
   pagination: {

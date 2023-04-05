@@ -44,8 +44,8 @@ class CustomMessageBubble extends React.Component {
         },
         (buttonIndex) => {
           switch (buttonIndex) {
-            default:
             case 0:
+            default:
               Clipboard.setString(currentMessage.text);
               break;
           }

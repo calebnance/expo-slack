@@ -13,34 +13,38 @@ import TouchText from '../components/TouchText';
 
 const Stack = createNativeStackNavigator();
 
-export default () => (
-  <Stack.Navigator screenOptions={{ presentation: 'modal' }}>
-    <Stack.Screen
-      name="Chat"
-      component={Chat}
-      options={({ navigation }) => ({
-        headerLeft: () => <HeaderLeft />,
-        headerRight: () => <HeaderRight navigation={navigation} />,
-        headerTitleStyle: gStyle.textLarsBold16
-      })}
-    />
-    <Stack.Screen
-      name="Notifications"
-      component={Notifications}
-      options={({ navigation }) => ({
-        headerLeft: () => (
-          <TouchText onPress={() => navigation.goBack(null)} text="Cancel" />
-        ),
-        headerRight: () => (
-          <TouchText
-            onPress={() => navigation.goBack(null)}
-            text="Save"
-            textStyle={gStyle.textCiruBook14}
-          />
-        ),
-        headerTitleStyle: gStyle.textLarsBold16,
-        title: 'Do Not Disturb'
-      })}
-    />
-  </Stack.Navigator>
-);
+function ChatStack() {
+  return (
+    <Stack.Navigator screenOptions={{ presentation: 'modal' }}>
+      <Stack.Screen
+        name="Chat"
+        component={Chat}
+        options={({ navigation }) => ({
+          headerLeft: () => <HeaderLeft />,
+          headerRight: () => <HeaderRight navigation={navigation} />,
+          headerTitleStyle: gStyle.textLarsBold16
+        })}
+      />
+      <Stack.Screen
+        name="Notifications"
+        component={Notifications}
+        options={({ navigation }) => ({
+          headerLeft: () => (
+            <TouchText onPress={() => navigation.goBack(null)} text="Cancel" />
+          ),
+          headerRight: () => (
+            <TouchText
+              onPress={() => navigation.goBack(null)}
+              text="Save"
+              textStyle={gStyle.textCiruBook14}
+            />
+          ),
+          headerTitleStyle: gStyle.textLarsBold16,
+          title: 'Do Not Disturb'
+        })}
+      />
+    </Stack.Navigator>
+  );
+}
+
+export default ChatStack;
