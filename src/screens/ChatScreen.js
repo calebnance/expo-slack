@@ -92,7 +92,7 @@ class ChatScreen extends React.Component {
           onSend={(msgs) => this.onSend(msgs)}
           renderAccessory={(props) => <CustomAccessoryBar {...props} />}
           renderMessage={(props) => <CustomMessage {...props} />}
-          renderSend={() => null}
+          renderSend={() => <View />}
           user={{ _id: 1 }}
         />
       </View>
